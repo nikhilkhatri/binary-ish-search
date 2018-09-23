@@ -45,6 +45,8 @@ int main(){
 	struct timespec start_time;
 	struct timespec end_time;
 
+	// This variable exists to ensure that the compiler does not optimise out the loop
+	// There are probably neater ways to do this
 	int throw = 0;
 
 	clock_gettime(CLOCK_REALTIME, &start_time);
@@ -55,8 +57,10 @@ int main(){
 	}
 	clock_gettime(CLOCK_REALTIME, &end_time);
 
-	// print time elapsed in nanoseconds
+	// print time elapsed in microseconds
 	printf("time: %ld us\n", time_elapsed(start_time, end_time));
+	
+	// ensure compiler doesnt eliminate throw, and hence the loop
 	printf("%d\n", throw);
 }
 
