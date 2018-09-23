@@ -12,7 +12,11 @@ Both files are simple C programs with no external dependencies.
 
 To compile and run:
 ```
-gcc -O2 binary_search.c -o bs
+$ gcc -O2 binary_search.c -o bs
 
-gcc -O2 serialised_preorder_bst.c -o pre
+$ gcc -O2 serialised_preorder_bst.c -o pre
+
+$ ./bs
+
+$ ./pre
 ```
